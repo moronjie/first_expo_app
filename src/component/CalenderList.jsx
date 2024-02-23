@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontFamily: Platform.select({
         ios: 'Inter',
-        android: 'Roboto',
+        android: 'RobotoLight',
       }),
     }
   });

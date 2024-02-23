@@ -1,10 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import CalenderList from './src/component/CalenderList';
+import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import { Roboto_900Regular, Roboto_300Light } from '@expo-google-fonts/roboto'
 
 export default function App() {
 
   const listData = [...Array(24)].map((_, i) => i + 1);
+
+  const [loaded] = useFonts({
+    Inter:Inter_900Black,
+    Roboto:Roboto_900Regular,
+    RobotoLight:Roboto_300Light
+  });
+
+  if(!loaded) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>

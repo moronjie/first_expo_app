@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Platform, StyleSheet, Text, View } from "react-native"
 
 export default function CalenderList({item}) {
   return (
@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
       color: '#9b4521',
       textTransform: 'capitalize',
       fontSize: 20,
+      fontFamily: Platform.select({
+        ios: 'Inter',
+        android: 'Roboto',
+      }),
     }
   });
   

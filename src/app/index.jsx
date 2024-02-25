@@ -1,33 +1,10 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import CalenderList from '../component/CalenderList';
-import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
-import { Roboto_900Black, Roboto_300Light } from '@expo-google-fonts/roboto';
-import * as SplashScreen from 'expo-splash-screen';
-import React,{ useEffect } from "react";
-
-// SplashScreen.preventAutoHideAsync();
-
-
+import React from "react";
 
 export default function App() {
   const listData = [...Array(24)].map((_, i) => i + 1);
-
-  const [fontsLoaded, fontError] = useFonts({
-    Inter: Inter_900Black,
-    Roboto: Roboto_900Black,
-    RobotoLight: Roboto_300Light,
-  });
-
-  useEffect(() => {
-    if (fontsLoaded && fontError) {
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
-
+  
   return (
     <View style={styles.container}>
       <FlatList

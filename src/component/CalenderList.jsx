@@ -1,10 +1,13 @@
-import { Platform, StyleSheet, Text, View } from "react-native"
+import { Platform, Pressable, StyleSheet, Text, View } from "react-native"
+import { Link } from "expo-router";
 
 export default function CalenderList({item}) {
   return (
-    <View style={styles.box}>
-        <Text style={styles.text}>{item}</Text>
-    </View>
+    <Link href={`/day${item}`} asChild>
+      <Pressable style={styles.box}>
+          <Text style={styles.text}>{item}</Text>
+      </Pressable>
+    </Link>
   )
 }
 

@@ -3,6 +3,7 @@ import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 import { Roboto_900Black, Roboto_300Light } from '@expo-google-fonts/roboto';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -23,18 +24,20 @@ export default function Layout() {
         return null;
     }
   return (
-    <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#f4511e',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}
-    >
-        <Stack.Screen name="index" options={{title: "react-native-calender-app"}}  />
-    </Stack>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+          <Stack.Screen name="index" options={{title: "react-native-calender-app"}}  />
+      </Stack>
+    </GestureHandlerRootView>
   );
 }
